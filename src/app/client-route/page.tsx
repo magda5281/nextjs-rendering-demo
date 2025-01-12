@@ -1,15 +1,31 @@
 'use client';
 
-//Error:   × You're importing a component that needs "server-only". That only works in a Server Component but one of its parents is marked with "use client", so it's a Client Component.
-// │ Learn more: https://nextjs.org/docs/app/building-your-application/rendering
-// import { serverSideFunction } from '@/app/utils/server-utils';
+import React from 'react';
+import Slider from 'react-slick';
+import 'slick-carousel/slick/slick.css';
+import 'slick-carousel/slick/slick-theme.css';
+
 export default function ClientRoutePage() {
  console.log('Client route rendered ');
- //  const result = serverSideFunction();
+ const settings = {
+  dots: true,
+ };
  return (
-  <>
-   <h1>Client route page</h1>
-   {/* <p>{result}</p> */}
-  </>
+  <div className='image-slider-container'>
+   <Slider {...settings}>
+    <div>
+     <img src='http://picsum.photos/400/200' />
+    </div>
+    <div>
+     <img src='http://picsum.photos/400/200' />
+    </div>
+    <div>
+     <img src='http://picsum.photos/400/200' />
+    </div>
+    <div>
+     <img src='http://picsum.photos/400/200' />
+    </div>
+   </Slider>
+  </div>
  );
 }
