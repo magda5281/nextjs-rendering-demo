@@ -1,13 +1,16 @@
 'use client';
 import { useState } from 'react';
-import ClientComponentTwo from './client-component-two';
+import React, { ReactNode } from 'react';
 
-export default function ClientComponentOne() {
+interface Props {
+ children: ReactNode;
+}
+export default function ClientComponentOne({ children }: Props) {
  const [name, setName] = useState('Batman');
  return (
   <>
    <h1>Client Component One</h1>
-   <ClientComponentTwo />
+   {children}
   </>
  );
 }
